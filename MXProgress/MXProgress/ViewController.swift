@@ -16,16 +16,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mxProgress = MXProgressView(progressViewBackViewColor: RED(), progressViewColor: BLACK(),progressType: MXProgressType.Normal)
+//        mxProgress = MXProgressView(progressViewBackViewColor: RED(), progressViewColor: BLACK(),progressType: MXProgressType.Rect)
+        
+        
+        mxProgress = MXProgressView(progressViewBackViewColor: CLEAR(), progressViewColor: BLACK(), progressType: MXProgressType.Circle)
+        
+        
         mxProgress.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.view.addSubview(mxProgress)
         
+        
+        
+        
+        
         let locationH = "H:|-10-[mxProgress(200)]"
-        let locationV = "V:|-20-[mxProgress(20)]"
+        let locationV = "V:|-20-[mxProgress(200)]"
         let mxProgressDic = ["mxProgress":mxProgress]
         
         setConstraintsWithStringHandVWithCurrentView(locationH, locationV, self.view, mxProgressDic)
+        
         mxProgress.installCompotent()
+        
+        
         let  delayInSeconds = 2.0;
         
         var minutes = 1 * Double(NSEC_PER_SEC)
@@ -43,7 +55,7 @@ class ViewController: UIViewController {
     
     func layerAnimation()->Void {
         
-        self.mxProgress.mxProgress = 0.8
+        self.mxProgress.mxNormalProgress = 0.8
         
     }
     

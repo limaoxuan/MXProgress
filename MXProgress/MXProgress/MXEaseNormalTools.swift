@@ -73,3 +73,10 @@ return UIColor.greenColor()
 
 }
 
+func CLEAR()->UIColor{
+
+
+return UIColor.clearColor()
+
+}
+
